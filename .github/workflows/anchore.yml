@@ -29,4 +29,3 @@ jobs:
         image: target/bookstore-v3-1.0.0-SNAPSHOT.jar
         dependency-snapshot: true
 
-   .github/workflows
