@@ -1,4 +1,4 @@
-name: Syft SBOM Creation
+name: Anchore
 
 on:
   push:
@@ -26,5 +26,4 @@ jobs:
     - name: Create and submit SBOM
       uses: anchore/sbom-action@latest
       with:
-        image: target/bookstore-v3-1.0.0-SNAPSHOT.jar
         dependency-snapshot: true
