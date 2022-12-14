@@ -1,0 +1,26 @@
+name: "Maven MultiModule Dependency Submission"
+on:
+  push:
+  
+jobs:
+  tree:
+    name: Maven Multi Dependency Submission
+    runs-on: ubuntu-20.04
+    
+    # The API requires write permission on the repository to submit dependencies (HTTP Status 403 for request POST https://api.github.com/repos/vulna-felickz/mvnexbook-examples-1.0/dependency-graph/snapshots)
+    permissions:
+      actions: read
+      contents: write
+      
+    strategy:
+      fail-fast: false
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      
+    - run: mvn --version
+      
+        
+    - name: Submit Web Dependency Snapshot
+      uses: advanced-security/maven-dependency-submission-action@v1
