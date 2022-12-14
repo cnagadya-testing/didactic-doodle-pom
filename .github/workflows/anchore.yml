@@ -1,7 +1,7 @@
 name: Syft SBOM Creation
 
 on:
-  push
+  push:
 
 jobs:
   build_publish:
@@ -28,4 +28,3 @@ jobs:
       with:
         image: target/bookstore-v3-1.0.0-SNAPSHOT.jar
         dependency-snapshot: true
-
